@@ -23,9 +23,16 @@
         </Grid.RowDefinitions>
 
         <!-- Checkout List -->
-        <Border Grid.Row="01" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="4" Background="LightGray" BorderBrush="Aquamarine" BorderThickness="1">
-            <TextBlock Text="j" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="3" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua"></TextBlock>
-        </Border>
+        <Grid x:Name="CheckoutPanel"
+              Grid.Column="4" Grid.Row="1"
+              Grid.ColumnSpan="2" Grid.RowSpan="3">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+                <StackPanel x:Name="CheckoutList" Margin="10" Background="Transparent">
+                    <!-- Checkout items will be added here dynamically -->
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        
 
         <!-- Menu Header -->
         <Grid x:Name="MenuHeader" Grid.Row="0" Grid.Column="0"

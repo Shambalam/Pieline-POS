@@ -77,6 +77,14 @@ namespace POSApp
             {
                 string itemName = button.Content.ToString();
                 MessageBox.Show($"You selected: {itemName}", "Menu Item Selected", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                // Add item to cart logic here
+                var itemTextBlock = new TextBlock
+                {
+                    Text = itemName,
+                    Margin = new Thickness(5)
+                };
+                CheckoutList.Children.Add(itemTextBlock);
             }
         }
 
