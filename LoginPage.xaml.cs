@@ -29,7 +29,8 @@ namespace POSApp
 
         public void onLoginClick(object sender, RoutedEventArgs e)
         {
-            
+            // Needs login info validation
+
             if(string.IsNullOrEmpty(UsernameBox.Text) || string.IsNullOrEmpty(PasswordBox.Password))
             {
                 MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Warning);

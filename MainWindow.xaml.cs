@@ -27,7 +27,13 @@ namespace POSApp
         }
         public void showMenu()
         {
-            MainContent.Content = new MenuUC();
+            MainContent.Content = new MenuUC(this);
         }
+        public void showCheckout()
+        {
+            //MainContent.Content = new CheckoutUC(this);
+            return;
+        }
+
     }
 }

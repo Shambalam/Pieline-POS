@@ -21,10 +21,10 @@ namespace POSApp
     public partial class MenuUC : UserControl
     {
         private MainWindow _mainWindow;
-        public MenuUC()
+        public MenuUC(MainWindow mainWindow)
         {
             InitializeComponent();
-            _mainWindow = new MainWindow();
+            _mainWindow = mainWindow;
             PopulateMenuItems();
         }
         private void PopulateMenuItems()
@@ -61,7 +61,7 @@ namespace POSApp
             {
                 var button = new Button
                 {
-                    
+
                     Content = item,
                     Margin = new Thickness(5),
                     Height = 40,
@@ -80,5 +80,17 @@ namespace POSApp
             }
         }
 
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            // Handle logout logic here
+            //Clear Cart()
+
+            
+            _mainWindow.showLogin();
+            //.Current.Shutdown();
+            return;
+
+        }
     }
 }
+

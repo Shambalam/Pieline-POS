@@ -21,26 +21,30 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="a" Grid.Row="0" Grid.Column="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="b" Grid.Row="0" Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="c" Grid.Row="0" Grid.Column="2" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="d" Grid.Row="1" Grid.Column="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="e" Grid.Row="1" Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="f" Grid.Row="1" Grid.Column="2" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="g" Grid.Row="2" Grid.Column="0" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="H" Grid.Row="2" Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="I" Grid.Row="2" Grid.Column="2" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
 
-        
+        <!-- Checkout List -->
         <Border Grid.Row="01" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="4" Background="LightGray" BorderBrush="Aquamarine" BorderThickness="1">
             <TextBlock Text="j" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="3" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua"></TextBlock>
         </Border>
-        <Border Grid.Row="0" Grid.Column="0"
+
+        <!-- Menu Header -->
+        <Grid x:Name="MenuHeader" Grid.Row="0" Grid.Column="0"
+              Grid.ColumnSpan="6">
+            <Border Grid.Row="0" Grid.Column="0"
                 Grid.RowSpan="1" Grid.ColumnSpan="6"
                 BorderBrush="Black" BorderThickness="0,0,0,2"
                 Background="Cyan">
-            <TextBlock Text="Menu" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        </Border>
+                <TextBlock Text="Menu" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </Border>
+            <Button Content="Settings" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0"
+                    Grid.Column="1"/>
+            <Button Content="Logout" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="595,0,0,0"
+                    Click="Logout_Click"/>
+
+        </Grid>
+
+
+        <!-- Menu Items Panel -->
         <Grid x:Name="MenuItemsPanel" Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="4" Background="Red">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                 <UniformGrid x:Name="MenuItemsGrid" Columns="3" Rows="0" Margin="10" Background="Transparent">
