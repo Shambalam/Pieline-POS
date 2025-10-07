@@ -25,7 +25,60 @@ namespace POSApp
         {
             InitializeComponent();
             _mainWindow = new MainWindow();
+            PopulateMenuItems();
         }
-        
+        private void PopulateMenuItems()
+        {
+            // Example menu items
+            var menuItems = new List<string>
+            {
+                "Espresso",
+                "Cappuccino",
+                "Latte",
+                "Mocha",
+                "Tea",
+                "Hot Chocolate",
+                "Sandwich",
+                "Salad",
+                "Cake",
+                "Cookie",
+                "lorem",
+                "lorem2",
+                "lorem3",
+                "lorem4",
+                "lorem5",
+                "lorem6",
+                "lorem7",
+                "lorem8",
+                "lorem9",
+                "lorem10",
+
+                "lorem",
+                "lorem",
+
+            };
+            foreach (var item in menuItems)
+            {
+                var button = new Button
+                {
+                    
+                    Content = item,
+                    Margin = new Thickness(5),
+                    Height = 40,
+                    Width = 100
+                };
+                button.Click += MenuItem_Click;
+                MenuItemsGrid.Children.Add(button);
+            }
+        }
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                string itemName = button.Content.ToString();
+                MessageBox.Show($"You selected: {itemName}", "Menu Item Selected", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
     }
 }
